@@ -1,0 +1,15 @@
+.. title: Sampling & Aliasing: Theory and Math
+.. slug: sampling-and-aliasing-math
+.. date: 2020-04-28 16:16:05 UTC
+.. tags:
+.. category: basics:signals-and-systems
+.. link:
+.. description:
+.. has_math: true
+.. type: text
+.. priority: 3
+
+
+
+.. raw:: html
+   :file: ../dsp/jupyter/sampling_theorem.html
