@@ -10,4 +10,13 @@
 .. priority: 1
 
 
-s
+Recommended IDEs
+================
+
+- Spyder
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+
+<style>
+.jp-NotebookPanel-toolbar {
+  background-color: #aecad4 !important;
+}
+.lm-MenuBar-content {
+  color: #02484d;
+}
+
+
+.jp-RenderedImage {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+</style>

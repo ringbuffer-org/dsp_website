@@ -1,5 +1,5 @@
-.. title: Frequency Domain
-.. slug: frequency-domain
+.. title: The Fourier Transform
+.. slug: fourier-transform-sinusoid
 .. date: 2021-04-14 16:00:00 UTC
 .. tags:
 .. category: dsp:fourier_transform
@@ -11,4 +11,4 @@
 
 
 .. raw:: html
-   :file: ../dsp/jupyter/frequency-domain.html
+   :file: ../dsp/jupyter/fourier_transform_sinusoid.html

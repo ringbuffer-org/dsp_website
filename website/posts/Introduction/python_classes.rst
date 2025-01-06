@@ -1,0 +1,40 @@
+.. title: Classes in Python
+.. slug: python-classes
+.. date: 2024-12-22 12:00:00
+.. tags:
+.. category: dsp:intro
+.. link:
+.. description:
+.. type: text
+.. has_math: true
+.. priority: 5
+
+
+Defining a Class
+================
+
+.. code-block:: python
+
+    class FirstClass:
+        
+        # Contructor, always taking the argument self + additional arguments
+        # Is called on class instantiation
+        
+        def __init__(self, a, b):
+            self.a = a
+            self.b = b
+        
+        # Methods are defined just like regular functions
+        def sum(self):
+            print(self.a + self.b)
+        
+        def diff(self):
+            print(self.a - self.b)    
+        
+        
+    # Create an instance of FirstClass and assigns it to the variable l:
+    l = FirstClass(0, 10)
+
+
+    l.sum() 
+    l.diff()  

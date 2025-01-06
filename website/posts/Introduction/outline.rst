@@ -10,7 +10,5 @@
 .. priority: 0
 
 
-The DSP section of `ringbuffer.org` teaches selected concepts of digital signal processing that are relevant for working with 
-music signal processing.
-Python is used as the primary programming language.
+
  
