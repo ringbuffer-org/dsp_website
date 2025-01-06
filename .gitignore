@@ -1,0 +1,6 @@
+.doit.db
+__pycache__/
+cache/
+jupyter/.ipynb_checkpoints/
+jupyter/*.html
+jupyter/*.png   
