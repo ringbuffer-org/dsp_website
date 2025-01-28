@@ -4,3 +4,7 @@ cache/
 jupyter/.ipynb_checkpoints/
 jupyter/*.html
 jupyter/*.png   
+
+jupyter_code/.ipynb_checkpoints/
+jupyter_code/*.html
+jupyter_code/*.png   

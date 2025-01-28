@@ -7,7 +7,7 @@
 .. description:
 .. type: text
 .. has_math: true
-.. priority: 5
+.. priority: 7
 
 
 Matplotlib's is a library for plotting in Python in a similar way it is handeled in Matlab. 
@@ -32,6 +32,13 @@ The ``.plot()`` function takes two arguments and plots them as  abcissa  and ord
     # plot
     plt.plot(x,y)
 
+
+.. figure:: /images/dsp/python_simple_plot.png
+	:figwidth: 100%
+	:width: 60%
+	:align: center  
+
+-----
 
 Axis Labels & Legends
 =====================
@@ -64,20 +71,54 @@ Axis Labels & Legends
 
 
 
+-----
 
 Exporting Plots
 ===============
+
+Exporting high quality plots is crucial for scientific reports and publications.
 
 
 Print to Graphic File
 ---------------------
 
+PNG files are the preferred compressed format for graphics.
+Make sure to increase the resolution (dpi) to get a high quality:
+
+.. code-block:: python
+
+    from matplotlib import pyplot as plt
+    import numpy as np
+
+    # input values
+    x = np.linspace(-1,1,100)
+    # calculate parabola
+    y = np.pow(x,2)
+
+    # plot
+    plt.plot(x,y)
+    plt.savefig('parabola.png', dpi=600)
+
+
+For better quality, use a vector format, such as PDF:
+
+
+.. code-block:: python
+
+    ...
+
+    plt.savefig('parabola.pdf')
 
 
 
 Export as PGF/Tikz
 ------------------
 
+While PDF files have perfect resolution, they have fixed properties, 
+such as font type or line width. The best option for fully integrated plots is the PGF/Tikz system inside LaTex: https://tikz.dev/
+
+Tikz renders graphics inside LaTex, based on text files with data points.
+A PGF file can be exported directly from MatPlotLib:
 
 .. code-block:: python
 
@@ -93,6 +134,30 @@ Export as PGF/Tikz
 
     plt.savefig('myfig.pgf')
 
+------
+
+The generated text file can be easily integrated in a LaTex document with the input directive:
+
+.. code-block:: latex
+
+    \documentclass{article}
+    \usepackage{pgfplots}
+
+    \begin{document}
+
+    \input{myfig.pgf}
+
+    \end{document}
+
+
+.. admonition:: Exercise
+
+	Create a PDF document with a PGF vesion of the plot with labels and legend.
+
+
+------
+
+
 If no LaTex system is installed, the pfg file is created but an error is thrown.
 Backends are 
 
@@ -102,6 +167,12 @@ Backends are
 
 TexLive is recommended (big package):
 
-    https://www.tug.org/texlive/windows.html
+In Windows:
+
+    - https://www.tug.org/texlive/windows.html
+
+In Linux (Debian):
 
     $ sudo apt install texlive-full
+
+   
