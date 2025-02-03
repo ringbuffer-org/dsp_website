@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <link rel="stylesheet" href="/assets/css/webaudio_style.css">
+</head>
+
+<body>
+
+  <center>
+
+  <p><p>Pitch (Hz): <span id="oscillatorA_text"></span></p>
+  <input type="range"  min="1" max="100000" value="440" class="slider" step="1" style="width: 100%;" oninput="set_osc_freq(this.value)">
+</p>
+
+
+
+<p><p>Output Gain: <span id="gain_text"></span></p>
+<input type="range" id="gain_slider" min="0" max="1" value="0" class="slider"   step="0.01" style="width: 100%;" oninput="set_gain(this.value)">
+</p>
+
+<div class="scope-box"  width=100% height=60%>
+
+  Time Domain:
+  <p>
+    <canvas id='scope'></canvas>
+  </p>
+
+  Frequency Domain:
+  <p>
+    <canvas id='spectrum'  width="1024"></canvas>
+  </p>
+
+</div>
+
+</center>
+
+</body>
+
+<script type="text/javascript">
+
+var context     = new AudioContext();
+
+var oscillatorA = context.createOscillator();
+var oscillator2 = context.createOscillator();
+var oscillator3 = context.createOscillator();
+var oscillator4 = context.createOscillator();
+var oscillator5 = context.createOscillator();
+var oscillator6 = context.createOscillator();
+var oscillator7 = context.createOscillator();
+var oscillator8 = context.createOscillator();
+var oscillator9 = context.createOscillator();
+var oscillator10 = context.createOscillator();
+
+var gain        = context.createGain();
+var analyser    = context.createAnalyser();
+
+
+oscillatorA.type = 'sine';
+oscillatorA.frequency.setValueAtTime(180, context.currentTime);
+oscillatorA.start();
+
+oscillator2.type = 'sine';
+oscillator2.frequency.setValueAtTime(180, context.currentTime);
+oscillator2.start();
+
+oscillator3.type = 'sine';
+oscillator3.frequency.setValueAtTime(180, context.currentTime);
+oscillator3.start();
+
+oscillator4.type = 'sine';
+oscillator4.frequency.setValueAtTime(180, context.currentTime);
+oscillator4.start();
+
+oscillator5.type = 'sine';
+oscillator5.frequency.setValueAtTime(180, context.currentTime);
+oscillator5.start();
+
+oscillator6.type = 'sine';
+oscillator6.frequency.setValueAtTime(180, context.currentTime);
+oscillator6.start();
+
+oscillator7.type = 'sine';
+oscillator7.frequency.setValueAtTime(180, context.currentTime);
+oscillator7.start();
+
+oscillator8.type = 'sine';
+oscillator8.frequency.setValueAtTime(180, context.currentTime);
+oscillator8.start();
+
+oscillator9.type = 'sine';
+oscillator9.frequency.setValueAtTime(180, context.currentTime);
+oscillator9.start();
+
+oscillator10.type = 'sine';
+oscillator10.frequency.setValueAtTime(180, context.currentTime);
+oscillator10.start();
+
+oscillatorA.connect(gain);
+oscillator2.connect(gain);
+oscillator3.connect(gain);
+oscillator4.connect(gain);
+oscillator5.connect(gain);
+oscillator6.connect(gain);
+oscillator7.connect(gain);
+oscillator8.connect(gain);
+oscillator9.connect(gain);
+oscillator10.connect(gain);
+ 
+
+gain.connect(context.destination);
+gain.gain.value = 0;
+
+const volumeSlider = document.getElementById('gain_slider');
+
+volumeSlider.addEventListener('input', function() {
+  gain.gain.value = this.value;
+}, false);
+
+
+analyser.fftSize = 2048;
+gain.connect(analyser);
+
+analyser.minDecibels = -120;
+analyser.maxDecibels = 0;
+
+var scopeCtx = document.getElementById('scope').getContext('2d');
+var spectCtx = document.getElementById('spectrum').getContext('2d');
+
+draw();
+
+function draw() {
+  drawSpectrum(analyser, spectCtx);
+  drawScope(analyser, scopeCtx);
+
+  requestAnimationFrame(draw);
+}
+
+function drawSpectrum(analyser, ctx) {
+  var width = ctx.canvas.width;
+  var height = ctx.canvas.height;
+  var freqData = new Uint8Array(analyser.frequencyBinCount);
+  var scaling = height / 256;
+
+  analyser.getByteFrequencyData(freqData);
+
+  ctx.fillStyle = 'rgba(256, 256, 256, 0.1)';
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = 'rgb(0, 0, 200)';
+  ctx.beginPath();
+
+  for (var x = 0; x < width; x++)
+  ctx.lineTo(x, height - freqData[x] * scaling);
+
+  ctx.stroke();
+}
+
+function drawScope(analyser, ctx) {
+  var width = ctx.canvas.width;
+  var height = ctx.canvas.height;
+  var timeData = new Uint8Array(analyser.frequencyBinCount);
+  var scaling = height / 256;
+  var risingEdge = 0;
+  var edgeThreshold = 0.1;
+
+  analyser.getByteTimeDomainData(timeData);
+
+  ctx.fillStyle = 'rgba(256, 256, 256, 0.1)';
+  ctx.fillRect(0, 0, width, height);
+
+  ctx.lineWidth = 2;
+  ctx.strokeStyle = 'rgb(0, 0, 200)';
+  ctx.beginPath();
+
+  // No buffer overrun protection
+  while (timeData[risingEdge++] - 128 > 0 && risingEdge <= width);
+  if (risingEdge >= width) risingEdge = 0;
+
+  while (timeData[risingEdge++] - 128 < edgeThreshold && risingEdge <= width);
+  if (risingEdge >= width) risingEdge = 0;
+
+  for (var x = risingEdge; x < timeData.length && x - risingEdge < width; x++)
+  ctx.lineTo(x - risingEdge, height - timeData[x] * scaling);
+
+  ctx.stroke();
+}
+
+
+
+
+function set_osc_freq(y)
+{
+    oscillatorA.frequency.setValueAtTime(y, context.currentTime);
+    oscillator2.frequency.setValueAtTime(y*2, context.currentTime);
+    oscillator3.frequency.setValueAtTime(y*3, context.currentTime);
+    oscillator4.frequency.setValueAtTime(y*4, context.currentTime);
+    oscillator5.frequency.setValueAtTime(y*5, context.currentTime);
+    oscillator6.frequency.setValueAtTime(y*6, context.currentTime);
+    oscillator7.frequency.setValueAtTime(y*7, context.currentTime);
+    oscillator8.frequency.setValueAtTime(y*8, context.currentTime);
+    oscillator9.frequency.setValueAtTime(y*9, context.currentTime);
+    oscillator10.frequency.setValueAtTime(y*10, context.currentTime);
+
+
+  
+  var output = document.getElementById('oscillatorA_text');
+  output.innerHTML = y;
+}
+
+
+function set_pre_gain(y)
+{
+  pre_gain.gain.value = y
+}
+
+
+function set_gain(y)
+{
+  context.resume()
+  gain.gain.value = y
+}
+
+
+</script>
+
+</html>

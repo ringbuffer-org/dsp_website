@@ -2,7 +2,7 @@
 .. slug: Laplace Transform
 .. date: 2021-04-14 16:00:00 UTC
 .. tags:
-.. category: basics:signals-and-systems
+.. category: dsp:filters
 .. link:
 .. description:
 .. has_math: true

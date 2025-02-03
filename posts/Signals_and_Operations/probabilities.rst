@@ -7,7 +7,7 @@
 .. description:
 .. has_math: true
 .. type: text
-.. priority: 3
+.. priority: 2
 
 
 

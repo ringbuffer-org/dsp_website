@@ -1,7 +1,7 @@
 .. title: Wavefiles in Python
 .. slug: python-wavefiles
 .. date: 2025-01-09 17:00:00
-.. author: Henrik von Coler
+.. author: Noel Alben
 .. tags:
 .. category: dsp:intro
 .. link:
@@ -14,3 +14,5 @@
 
 
 
+.. raw:: html
+   :file: ../dsp/jupyter_code/python_wavefiles.html

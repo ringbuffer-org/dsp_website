@@ -1,0 +1,23 @@
+.. title: Bilinear Transform: RC Lowpass
+.. slug: bilinear-rc-lowpass
+.. date: 2020-05-17 09:39:35 UTC
+.. tags:
+.. category: dsp:filters
+.. link:
+.. description:
+.. type: text
+.. has_math: true
+.. priority: 20
+
+
+.. raw:: html
+   :file: ../dsp/jupyter/bilinear-rc.html
+
+
+----
+
+References
+==========
+
+.. publication_list:: bibtex/filters.bib
+	   :style: unsrt

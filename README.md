@@ -3,6 +3,10 @@
 
 To be added:
 
-Basics:
+- Basics:
     - dB and log 
     - SNR
+
+
+- Fourier transfor
+    - transform pairs

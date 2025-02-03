@@ -9,7 +9,7 @@
 .. type: text
 .. priority: 11   
 .. author: Noel Alben
-
+                              
 
 .. raw:: html
    :file: ../dsp/jupyter_code/python_convolution.html

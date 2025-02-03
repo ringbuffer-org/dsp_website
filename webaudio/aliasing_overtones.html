@@ -51,8 +51,7 @@ oscillatorA.frequency.setValueAtTime(1000, context.currentTime);
 oscillatorA.start();
 
 const distortion = context.createWaveShaper();
-
-// …
+ 
 
 function makeDistortionCurve(amount) {
   const k = typeof amount === "number" ? amount : 50;
@@ -67,7 +66,6 @@ function makeDistortionCurve(amount) {
   return curve;
 }
 
-// …
 
 distortion.curve = makeDistortionCurve(400);
 
