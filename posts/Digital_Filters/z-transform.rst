@@ -7,7 +7,7 @@
 .. description:
 .. has_math: true
 .. type: text
-.. priority: 8
+.. priority: 11
 
 .. raw:: html
    :file: ../dsp/jupyter/z_transform.html

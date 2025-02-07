@@ -10,6 +10,5 @@
 .. has_math: true
 
 
-
 .. raw:: html
    :file: ../dsp/jupyter/iir-filters.html
