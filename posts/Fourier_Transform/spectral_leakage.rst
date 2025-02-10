@@ -8,7 +8,7 @@
 .. has_math: true
 .. type: text
 .. priority: 5
-
+.. template: jupyter_default.tmpl
 
 .. raw:: html  
    :file: ../dsp/jupyter/spectral_leakage.html

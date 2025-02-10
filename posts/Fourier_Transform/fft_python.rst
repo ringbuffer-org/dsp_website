@@ -9,6 +9,7 @@
 .. type: text
 .. priority: 11
 .. author: Noel Alben
+.. template: jupyter_default.tmpl
 
 
 .. raw:: html
