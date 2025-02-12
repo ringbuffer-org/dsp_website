@@ -8,6 +8,7 @@
 .. has_math: true
 .. type: text
 .. priority: 9
+.. template: jupyter_default.tmpl
 
 
 .. raw:: html

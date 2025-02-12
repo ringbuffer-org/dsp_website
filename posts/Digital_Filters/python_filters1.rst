@@ -9,6 +9,7 @@
 .. priority: 7
 .. has_math: true
 .. author: Noel Alben
+.. template: jupyter_default.tmpl
 
 .. raw:: html
    :file: ../dsp/jupyter_code/python_filters1.html

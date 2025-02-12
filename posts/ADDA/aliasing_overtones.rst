@@ -8,6 +8,7 @@
 .. has_math: true
 .. type: text
 .. priority: 5
+.. template: jupyter_default.tmpl
 
 
 The aliasing effect occurs much earlier and stronger, when an input signal with harmonics is used.

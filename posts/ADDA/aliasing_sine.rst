@@ -8,6 +8,7 @@
 .. has_math: true
 .. type: text
 .. priority: 4
+.. template: jupyter_default.tmpl
 
 
 In the following example, a sine wave's frequency can be changed with an upper limit of $100\\ \\mathrm{kHz}$.

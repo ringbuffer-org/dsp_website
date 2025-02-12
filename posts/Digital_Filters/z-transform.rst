@@ -8,6 +8,7 @@
 .. has_math: true
 .. type: text
 .. priority: 11
+.. template: jupyter_default.tmpl
 
 .. raw:: html
    :file: ../dsp/jupyter/z_transform.html
