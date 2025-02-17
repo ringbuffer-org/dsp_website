@@ -1,6 +1,6 @@
-.. title: Impulse Invariance Design
-.. slug: impulse_invariance
-.. date: 2025-02-12 12:00:00 UTC
+.. title: Filter Design Methods 
+.. slug: filter_design_methods
+.. date: 2025-02-16 12:00:00 UTC
 .. tags:
 .. category: dsp:filters
 .. link:
@@ -11,4 +11,4 @@
 .. template: jupyter_default.tmpl
 
 .. raw:: html
-   :file: ../dsp/jupyter/impulse_invariance.html
+   :file: ../dsp/jupyter/filter_design_methods.html

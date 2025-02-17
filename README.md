@@ -10,3 +10,6 @@ To be added:
 
 - Fourier transfor
     - transform pairs
+    - DTFT
+
+    
