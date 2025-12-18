@@ -6,10 +6,11 @@
 .. link:
 .. description:
 .. type: text
-.. priority: 22
+.. priority: 17
 .. has_math: true
 .. author: Noel Alben
 .. template: jupyter_default.tmpl
 
 .. raw:: html
    :file: ../dsp/jupyter_code/python_filters2.html
+

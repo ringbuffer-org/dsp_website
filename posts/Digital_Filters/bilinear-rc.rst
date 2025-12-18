@@ -1,5 +1,5 @@
-.. title: Bilinear Transform: RC Lowpass
-.. slug: bilinear-rc-lowpass
+.. title: Bilinear Transform 
+.. slug: bilinear_transform
 .. date: 2020-05-17 09:39:35 UTC
 .. tags:
 .. category: dsp:filters
